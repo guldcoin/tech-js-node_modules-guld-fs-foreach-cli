@@ -1,9 +1,9 @@
 {
-  "name": "guld-fs-str-replace-cli",
-  "version": "1.0.0",
-  "description": "Guld user management tools. Get, list, and check users of the guld group.",
+  "name": "guld-fs-foreach-cli",
+  "version": "1.2.1",
+  "description": "Run command for each file and/or directory in the given directory.",
   "bin": {
-    "guld-fs-str-replace": "./cli.js"
+    "guld-fs-foreach": "./cli.js"
   },
   "scripts": {
     "lint": "eslint --env browser *.js*",
@@ -19,9 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.16.0",
-    "guld-git-config": "^1.1.1",
-    "guld-user": "^0.2.0",
-    "inquirer": "^6.0.0"
+    "guld-fs-foreach": "^1.1.0",
+    "guld-spawn": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^5.0.1",

@@ -1,11 +1,11 @@
-# guld-fs-str-replace-cli
+# guld-fs-foreach-cli
 
-Replace old-string with new-string for all files in path.
+Run command for each file and/or directory in the given directory.
 
 ### Install
 
 ```
-npm i -g guld-fs-str-replace-cli
+npm i -g guld-fs-foreach-cli
 ```
 
 ### Usage
@@ -13,9 +13,9 @@ npm i -g guld-fs-str-replace-cli
 ##### CLI
 
 ```
-  Usage: guld-fs-str-replace <path> <old-str> <new-str> [flags...]
+  Usage: guld-fs-foreach <dir> <command> [flags...]
 
-  Replace old-string with new-string for all files in path.
+  Run command for each file and/or directory in the given directory.
 
   Options:
 

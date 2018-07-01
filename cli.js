@@ -1,17 +1,20 @@
 #!/usr/bin/env node
-const strReplace = require('guld-fs-str-replace')
+const foreach = require('guld-fs-foreach')
 const program = require('commander')
+const spawn = require('guld-spawn')
 const VERSION = require('./package.json').version
 
 /* eslint-disable no-console */
 program
-  .name('guld-fs-str-replace')
-  .usage('<path> <old-str> <new-str> [flags...]', 'Replace old-string with new-string for all files in path.')
-  .description('Replace old-string with new-string for all files in path.')
+  .name('guld-fs-foreach')
+  .usage('<dir> <command> [flags...]', 'Run command for each file and/or directory in the given directory.')
+  .description('Run command for each file and/or directory in the given directory.')
   .version(VERSION)
-  .action(async (p, o, n, flags) => {
-    strReplace(o, n, [p].concat(flags.rawArgs.slice(5)))
+  .action(async (dir, c, flags) => {
+    return foreach(dir, async f => {
+      if (f === '') return
+      return spawn(c, '', [f])
+    }, flags.rawArgs.slice(4))
   })
 
 program.parse(process.argv)
-
