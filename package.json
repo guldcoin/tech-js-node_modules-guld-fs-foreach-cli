@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.16.0",
-    "guld-fs-foreach": "^1.1.10",
+    "guld-fs-foreach": "^1.1.11",
     "guld-spawn": "^1.0.4"
   },
   "devDependencies": {
