@@ -1,6 +1,6 @@
 {
   "name": "guld-fs-foreach-cli",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Run command for each file and/or directory in the given directory.",
   "bin": {
     "guld-fs-foreach": "./cli.js"
@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.16.0",
-    "guld-fs-foreach": "^1.1.9",
+    "guld-fs-foreach": "^1.1.10",
     "guld-spawn": "^1.0.4"
   },
   "devDependencies": {
