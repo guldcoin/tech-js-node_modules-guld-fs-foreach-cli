@@ -19,8 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.16.0",
-    "guld-fs-foreach": "^1.1.5",
-    "guld-spawn": "^1.0.1"
+    "guld-fs-foreach": "^1.1.7",
+    "guld-spawn": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
