@@ -23,7 +23,7 @@
   "dependencies": {
     "commander": "^2.16.0",
     "guld-fs-foreach": "^1.1.21",
-    "guld-spawn": "^2.0.3"
+    "guld-spawn": "^1.0.11"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
