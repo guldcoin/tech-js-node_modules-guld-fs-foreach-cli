@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 const foreach = require('guld-fs-foreach')
 const program = require('commander')
-const spawn = require('guld-spawn')
-const VERSION = require('./package.json').version
+const spawn = require('guld-spawn').getSpawn()
+const thispkg = require(`${__dirname}/package.json`)
 
 /* eslint-disable no-console */
 program
-  .name('guld-fs-foreach')
+  .name(thispkg.name.replace('-cli', ''))
+  .version(thispkg.version)
+  .description(thispkg.description)
+//  .description('Run command for each file and/or directory in the given directory.')
   .usage('<dir> <command> [flags...]', 'Run command for each file and/or directory in the given directory.')
-  .description('Run command for each file and/or directory in the given directory.')
-  .version(VERSION)
   .action(async (dir, c, flags) => {
     var moreArgs
     if (flags && flags.rawArgs) moreArgs = flags.rawArgs.slice(4)
@@ -20,4 +21,9 @@ program
     }, moreArgs)
   })
 
-program.parse(process.argv)
+if (process.argv.length === 2) {
+  program.help()
+} else if (process.argv.length > 2) {
+  program.parse(process.argv)
+}
+module.exports = program
