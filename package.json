@@ -3,17 +3,20 @@
   "version": "1.2.16",
   "description": "Run command for each file and/or directory in the given directory.",
   "bin": {
-    "guld-fs-foreach": "./cli.js"
+    "guld-fs-foreach": "cli.js"
   },
   "scripts": {
     "lint": "eslint --env browser *.js*",
-    "fix": "eslint --fix *.js*"
+    "fix": "eslint --fix *.js*",
+    "test": "mocha test/*.js",
+    "test:lint": "npm run lint && npm run test"
   },
   "keywords": [
     "guld",
     "git",
     "config",
-    "cli"
+    "cli",
+    "node"
   ],
   "author": "isysd",
   "license": "MIT",
@@ -32,7 +35,8 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^5.2.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "chai": "^4.1.2"
   },
   "pre-commit": [
     "lint"
@@ -41,7 +45,7 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://github.com/isysd/tech-js-node_modules-guld-fs-foreach-cli#readme",
+  "homepage": "https://guld.tech/cli/guld-fs-foreach-cli.html",
   "preferGlobal": true,
-  "repository": "git@github.com:isysd/tech-js-node_modules-guld-fs-foreach-cli.git"
+  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-fs-foreach-cli"
 }

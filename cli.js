@@ -11,10 +11,13 @@ program
   .description('Run command for each file and/or directory in the given directory.')
   .version(VERSION)
   .action(async (dir, c, flags) => {
+    var moreArgs
+    if (flags && flags.rawArgs) moreArgs = flags.rawArgs.slice(4)
+    else moreArgs = []
     return foreach(dir, async f => {
       if (f === '') return
       return spawn(c, '', [f])
-    }, flags.rawArgs.slice(4))
+    }, moreArgs)
   })
 
 program.parse(process.argv)
